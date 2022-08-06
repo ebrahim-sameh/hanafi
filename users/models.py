@@ -1,7 +1,15 @@
 from django.db import models
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User,AbstractUser
 from PIL import Image
 
+
+class User(AbstractUser):
+   gender = models.BooleanField(default=True)
+   phone = models.CharField(max_length=11)
+   Country = models.CharField(max_length=11)
+   City = models.CharField(max_length=11)
+   email = models.EmailField()
+   student = models.BooleanField()
 
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
