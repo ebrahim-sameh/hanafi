@@ -7,7 +7,7 @@ class User(AbstractUser):
    gender = models.BooleanField(default=True)
    phone = models.CharField(max_length=11)
    Country = models.CharField(max_length=11)
-   City = models.CharField(max_length=11)
+   City = models.CharField(max_length=11,default='alex')
    email = models.EmailField()
    student = models.BooleanField()
 
